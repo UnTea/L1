@@ -74,7 +74,7 @@ func SquaresChannel(array []int) []int {
 }
 
 func main() {
-	numbers := [5]int{2, 4, 6, 8, 10}
+	numbers := [...]int{2, 4, 6, 8, 10}
 
 	squaresWaitGroup := SquaresWaitGroup(numbers[:])
 	fmt.Println("SquaresWaitGroup result:")
