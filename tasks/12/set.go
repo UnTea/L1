@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// Set is a function that returns set of unique elements of the input set
 func Set(slice []string) []string {
 	var result []string
 	set := make(map[string]bool, len(slice))
@@ -19,7 +20,6 @@ func Set(slice []string) []string {
 
 func main() {
 	slice := []string{"cat", "cat", "dog", "cat", "tree"}
-
 	set := Set(slice)
 
 	fmt.Printf("Slice representation: %v\nSet   representation: %v\n", slice, set)
