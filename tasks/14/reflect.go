@@ -5,6 +5,7 @@ import (
 	"reflect"
 )
 
+// TypeOf is a function that prints type of input interface
 func TypeOf(i interface{}) {
 	switch i.(type) {
 	case string:
@@ -12,12 +13,13 @@ func TypeOf(i interface{}) {
 	case int:
 		fmt.Printf("%v type(%T)\n", i, i)
 	case bool:
-		fmt.Printf("%vntype(%T)\n", i, i)
+		fmt.Printf("%v type(%T)\n", i, i)
 	case chan int:
 		fmt.Printf("%v type(%T)\n", i, i)
 	}
 }
 
+// Reflect is a function that prints type of input interface using reflect.TypeOf
 func Reflect(i interface{}) {
 	ri := reflect.TypeOf(i)
 
