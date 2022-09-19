@@ -28,6 +28,7 @@ func main() {
 	number := int64(43690)
 
 	fmt.Println(strconv.FormatInt(number, 2), strconv.FormatInt(number, 10)) // 1010101010101010 43690
+
 	ChangeNthBit(&number, 11, 1)
 	fmt.Println(strconv.FormatInt(number, 2), strconv.FormatInt(number, 10)) // 1010111010101010 44714
 
