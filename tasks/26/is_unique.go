@@ -5,6 +5,7 @@ import (
 	"strings"
 )
 
+// IsUnique is a case-insensitive function that checks a string for unique characters
 func IsUnique(s string) bool {
 	alpha := [26]int{}
 	s = strings.ToLower(s)
