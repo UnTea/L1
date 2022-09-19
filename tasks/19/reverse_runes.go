@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// reverseString is a fucntion that reverses input string
 func reverseString(s string) string {
 	runes := []rune(s)
 	left, right := 0, len(runes)-1
