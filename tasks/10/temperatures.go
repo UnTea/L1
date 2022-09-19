@@ -5,6 +5,7 @@ import (
 	"sync"
 )
 
+// Linear is a function that distributes temperatures into groups with step 10
 func Linear(temperatures []float32) map[int][]float32 {
 	groups := make(map[int][]float32)
 
@@ -16,6 +17,7 @@ func Linear(temperatures []float32) map[int][]float32 {
 	return groups
 }
 
+// Parallel is a function that distributes temperatures into groups with step 10 with concurrent computing
 func Parallel(temperatures []float32) map[int][]float32 {
 	var wg sync.WaitGroup
 	var mu sync.Mutex
@@ -32,7 +34,7 @@ func Parallel(temperatures []float32) map[int][]float32 {
 				for aboveZero := 0; aboveZero < 100; aboveZero += 10 {
 					if aboveZero <= int(value) && int(value) < aboveZero+10 {
 						mu.Lock()
-						groups[int(aboveZero)] = append(groups[int(aboveZero)], value)
+						groups[aboveZero] = append(groups[aboveZero], value)
 						mu.Unlock()
 
 						break
@@ -42,7 +44,7 @@ func Parallel(temperatures []float32) map[int][]float32 {
 				for belowZero := 0; belowZero > -100; belowZero -= 10 {
 					if belowZero >= int(value) && belowZero-10 < int(value) {
 						mu.Lock()
-						groups[int(belowZero)] = append(groups[int(belowZero)], value)
+						groups[belowZero] = append(groups[belowZero], value)
 						mu.Unlock()
 
 						break
