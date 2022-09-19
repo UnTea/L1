@@ -15,7 +15,7 @@ type Worker struct {
 func (worker *Worker) print(chanelInt chan int) {
 	for {
 		fmt.Println("Worker", worker.id, "value from the channel: ", <-chanelInt)
-		time.Sleep(600 * time.Millisecond)
+		time.Sleep(500 * time.Millisecond)
 	}
 }
 
