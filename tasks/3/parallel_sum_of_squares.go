@@ -5,6 +5,7 @@ import (
 	"sync"
 )
 
+// powerInteger is a function that powered an integer number to a power
 func powerInteger(number, power int) int {
 	if power == 0 {
 		return 1
@@ -19,6 +20,7 @@ func powerInteger(number, power int) int {
 	return result
 }
 
+// SumOfSquaresWaitGroup a function that parallel calculates the sum of squares of the array elements using sync.WaitGroup
 func SumOfSquaresWaitGroup(array []int) int {
 	if len(array) == 0 {
 		return 0
@@ -42,6 +44,7 @@ func SumOfSquaresWaitGroup(array []int) int {
 	return sum
 }
 
+// SumOfSquaresChannel a function that parallel calculates the sum of squares of the array elements using channels
 func SumOfSquaresChannel(array []int) int {
 	if len(array) == 0 {
 		return 0
