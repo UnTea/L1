@@ -5,7 +5,7 @@ import (
 	"sync"
 )
 
-// powerInteger is a function that powered a number to a power
+// powerInteger is a function that powered an integer number to a power
 func powerInteger(number, power int) int {
 	if power == 0 {
 		return 1
