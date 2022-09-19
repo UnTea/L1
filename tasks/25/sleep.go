@@ -5,6 +5,7 @@ import (
 	"time"
 )
 
+// Sleep is a function that stops the execution of programs for a given amount of time
 func Sleep(t time.Duration) {
 	<-time.After(t)
 }
