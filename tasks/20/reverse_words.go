@@ -5,6 +5,7 @@ import (
 	"strings"
 )
 
+// reverseWords is a fucntion that reverses input string by words
 func reverseWords(str string) string {
 	words := strings.Fields(str)
 
@@ -19,6 +20,7 @@ func reverseWords(str string) string {
 	return strings.Join(words, " ")
 }
 
+// reverseWords1 is a fucntion that reverses input string by words
 func reverseWords1(str string) string {
 	words := strings.Fields(str)
 
