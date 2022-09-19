@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// Intersection is a function that returns an intersection(same values) of two unordered sets
 func Intersection(firstSet, secondSet []int) []int {
 	setA := make(map[int]bool, len(firstSet))
 	setB := make(map[int]bool, len(secondSet))
