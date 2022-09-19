@@ -12,18 +12,18 @@ type Worker struct {
 	id int
 }
 
-func (worker *Worker) print(chanelInt chan int) {
+func (worker *Worker) print(channelInteger chan int) {
 	for {
-		fmt.Println("Worker", worker.id, "value from the channel: ", <-chanelInt)
+		fmt.Println("Worker", worker.id, "value from the channel: ", <-channelInteger)
 		time.Sleep(500 * time.Millisecond)
 	}
 }
 
 func main() {
-	channelInt := make(chan int)
-	channel := make(chan os.Signal)
+	channelInteger := make(chan int)
+	exitChannel := make(chan os.Signal)
 
-	signal.Notify(channel, os.Interrupt, syscall.SIGTERM)
+	signal.Notify(exitChannel, os.Interrupt, syscall.SIGTERM)
 
 	fmt.Print("Enter the workers count: ")
 	var workerCount int
@@ -38,16 +38,16 @@ func main() {
 			id: i,
 		}
 
-		go worker.print(channelInt)
+		go worker.print(channelInteger)
 	}
 
 	result := 1
 
 	for {
 		select {
-		case channelInt <- result:
+		case channelInteger <- result:
 			result++
-		case <-channel:
+		case <-exitChannel:
 			fmt.Println("Program stopped")
 			os.Exit(0)
 		}
