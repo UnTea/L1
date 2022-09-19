@@ -7,6 +7,7 @@ import (
 	"time"
 )
 
+// Read is a function that read data from the channel while channel is active
 func Read(channel chan string) {
 	counter := 1
 
