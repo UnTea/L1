@@ -7,6 +7,7 @@ import (
 	"time"
 )
 
+// quickSort is a function that sorts array with O(n*log(n))
 func quickSort(array []int) []int {
 	if len(array) == 1 {
 		return array
