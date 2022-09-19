@@ -5,6 +5,7 @@ import (
 	"sort"
 )
 
+// binarySearch is a function that search item in sorted array and returns his position, otherwise -1
 func binarySearch(array []int, target int) int {
 	min, max := 0, len(array)-1
 
