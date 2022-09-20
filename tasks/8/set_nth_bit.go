@@ -33,12 +33,12 @@ func main() {
 	fmt.Println(strconv.FormatInt(number, 2), strconv.FormatInt(number, 10)) // 1010111010101010 44714
 
 	ChangeNthBitByMasks(&number, 2, 0)
-	fmt.Println(strconv.FormatInt(number, 2), strconv.FormatInt(number, 10))
+	fmt.Println(strconv.FormatInt(number, 2), strconv.FormatInt(number, 10)) // 1010111010101000 44712
 
 	ChangeNthBitByMasks(&number, 4, 0)
-	fmt.Println(strconv.FormatInt(number, 2), strconv.FormatInt(number, 10))
+	fmt.Println(strconv.FormatInt(number, 2), strconv.FormatInt(number, 10)) // 1010111010100000 44704
 
 	ChangeNthBitByMasks(&number, 2, 1)
-	fmt.Println(strconv.FormatInt(number, 2), strconv.FormatInt(number, 10))
+	fmt.Println(strconv.FormatInt(number, 2), strconv.FormatInt(number, 10)) // 1010111010100010 44706
 
 }
