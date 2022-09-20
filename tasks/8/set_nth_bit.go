@@ -40,5 +40,4 @@ func main() {
 
 	ChangeNthBitByMasks(&number, 2, 1)
 	fmt.Println(strconv.FormatInt(number, 2), strconv.FormatInt(number, 10)) // 1010111010100010 44706
-
 }
